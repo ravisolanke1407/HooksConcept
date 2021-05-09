@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch,Redirect } from "react-router-dom";
+import Home from './Components/Home';
+import Parent from "./Components/UseCallBack/Home";
+import UseMemo from "./Components/useMemo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="root">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/useCallback" component={Parent} />
+        <Route exact path="/useMemo" component={UseMemo} />
+
+        {/* <Route path="/messages" component={Messages} />
+            <Route path="/about" component={About} /> */}
+            <Redirect to="/" />
+      </Switch>
     </div>
   );
 }
