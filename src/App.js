@@ -1,5 +1,8 @@
 import { Route, Switch,Redirect } from "react-router-dom";
+import { ProductProvider } from "./Components/Context/ProductContext";
 import Home from './Components/Home';
+import A from "./Components/TestComponents/A";
+import B from "./Components/TestComponents/B";
 import Parent from "./Components/UseCallBack/Home";
 import UseMemo from "./Components/useMemo";
 
@@ -11,10 +14,14 @@ function App() {
         <Route exact path="/useCallback" component={Parent} />
         <Route exact path="/useMemo" component={UseMemo} />
 
-        {/* <Route path="/messages" component={Messages} />
-            <Route path="/about" component={About} /> */}
+       
             <Redirect to="/" />
       </Switch>
+      {/* <ProductProvider>
+      <A />
+      <B/>
+      </ProductProvider> */}
+    
     </div>
   );
 }
